@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dikeoiuxxjreu"]
+
+[ext_resource type="Script" uid="uid://dkm5jriqfvfoq" path="res://2D arena/items/pistola/projectile.gd" id="1_olokn"]
+[ext_resource type="Texture2D" uid="uid://bs325i1od4hy1" path="res://2D arena/items/pistola/bullet effecta.png" id="2_x32kl"]
+[ext_resource type="AudioStream" uid="uid://b5gm2ha5a7xxg" path="res://2D arena/audio/hit noise.wav" id="3_t02wa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqv5t"]
+size = Vector2(2, 20)
+
+[node name="projectile" type="RigidBody2D"]
+collision_mask = 2
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 25
+script = ExtResource("1_olokn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_cqv5t")
+
+[node name="Image" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.101563, 0.101563)
+texture = ExtResource("2_x32kl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_t02wa")

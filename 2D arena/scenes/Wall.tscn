@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://di1qi8q75mi8a"]
+
+[ext_resource type="Texture2D" uid="uid://bmo56yd2oa83k" path="res://2D arena/textures/concrete.png" id="1_1kkbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5icwo"]
+size = Vector2(256, 256)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(349, 117)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.994365)
+shape = SubResource("RectangleShape2D_5icwo")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("1_1kkbp")

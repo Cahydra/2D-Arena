@@ -1,0 +1,318 @@
+[gd_scene format=3 uid="uid://ccxaeke2igq00"]
+
+[ext_resource type="Texture2D" uid="uid://dt20aiwjsdk3t" path="res://2D arena/textures/brick.png" id="1_afmtb"]
+[ext_resource type="Texture2D" uid="uid://bo78lm8yrspnb" path="res://2D arena/textures/Frog.png" id="2_afmtb"]
+[ext_resource type="Texture2D" uid="uid://eiag8memawwr" path="res://2D arena/items/rifle/rifle.png" id="3_li2wm"]
+[ext_resource type="Texture2D" uid="uid://1la5pywg218c" path="res://2D arena/textures/wood.png" id="4_71dpd"]
+[ext_resource type="Texture2D" uid="uid://oypvj5l5a2aj" path="res://2D arena/textures/Crown.png" id="5_kpkm0"]
+[ext_resource type="Script" uid="uid://cgeqk47oj73dt" path="res://2D arena/scripts/multiplayer_menu.gd" id="6_ah81y"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_tul4k"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_evees"]
+events = [SubResource("InputEventKey_tul4k")]
+
+[node name="Main Menu" type="Node2D" unique_id=1574172675]
+script = ExtResource("6_ah81y")
+
+[node name="visuals" type="Node2D" parent="." unique_id=652520038]
+scale = Vector2(2, 2)
+
+[node name="Concrete" type="Sprite2D" parent="visuals" unique_id=2047086982]
+position = Vector2(289.5, 163.75)
+scale = Vector2(2.26953, 1.30273)
+texture = ExtResource("1_afmtb")
+
+[node name="Player image3" type="TextureRect" parent="visuals" unique_id=174690925]
+offset_left = 75.0
+offset_top = 58.0
+offset_right = 125.0
+offset_bottom = 108.0
+texture = ExtResource("2_afmtb")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="hinge3" type="Node2D" parent="visuals" unique_id=864526229]
+position = Vector2(100, 83)
+
+[node name="HealthBar" type="ProgressBar" parent="visuals/hinge3" unique_id=10858852]
+modulate = Color(0, 1, 0, 1)
+offset_left = -63.0
+offset_top = 29.0
+offset_right = 69.0
+offset_bottom = 56.0
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="visuals/hinge3" unique_id=1127914818]
+offset_left = -62.0
+offset_top = 31.0
+offset_right = 70.0
+offset_bottom = 54.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 16
+text = "player"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Player image2" type="TextureRect" parent="visuals" unique_id=238849782]
+offset_left = 76.0
+offset_top = 143.0
+offset_right = 126.0
+offset_bottom = 193.0
+texture = ExtResource("2_afmtb")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="hinge2" type="Node2D" parent="visuals" unique_id=170023589]
+position = Vector2(101, 168)
+
+[node name="HealthBar" type="ProgressBar" parent="visuals/hinge2" unique_id=635875381]
+modulate = Color(0, 1, 0, 1)
+offset_left = -63.0
+offset_top = 29.0
+offset_right = 69.0
+offset_bottom = 56.0
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="visuals/hinge2" unique_id=1995730721]
+offset_left = -62.0
+offset_top = 31.0
+offset_right = 70.0
+offset_bottom = 54.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 16
+text = "player"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Player image" type="TextureRect" parent="visuals" unique_id=1675510110]
+offset_left = 213.0
+offset_top = 100.0
+offset_right = 263.0
+offset_bottom = 150.0
+texture = ExtResource("2_afmtb")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hinge" type="Node2D" parent="visuals" unique_id=1933195823]
+position = Vector2(238, 125)
+
+[node name="HealthBar" type="ProgressBar" parent="visuals/hinge" unique_id=434824366]
+modulate = Color(0, 1, 0, 1)
+offset_left = -63.0
+offset_top = 29.0
+offset_right = 69.0
+offset_bottom = 56.0
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="visuals/hinge" unique_id=9907810]
+offset_left = -62.0
+offset_top = 31.0
+offset_right = 70.0
+offset_bottom = 54.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 16
+text = "player"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Rifle" type="Sprite2D" parent="visuals" unique_id=629976261]
+position = Vector2(162, 91)
+rotation = 0.32617
+scale = Vector2(0.382956, 0.382956)
+texture = ExtResource("3_li2wm")
+
+[node name="Wood" type="Sprite2D" parent="visuals" unique_id=1307970619]
+position = Vector2(140, 168)
+rotation = -1.06562
+scale = Vector2(0.229641, 0.0486227)
+texture = ExtResource("4_71dpd")
+
+[node name="Crown" type="Sprite2D" parent="visuals" unique_id=636768859]
+position = Vector2(249, 82)
+rotation = 0.180491
+scale = Vector2(0.241337, 0.241337)
+texture = ExtResource("5_kpkm0")
+
+[node name="Panel" type="Panel" parent="visuals" unique_id=1625516758]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = 10.0
+offset_right = 741.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.34641, 0.34641)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="visuals/Panel" unique_id=401917147]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0286346
+anchor_top = 0.0180011
+anchor_right = 0.941552
+anchor_bottom = 0.850118
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.947973, 0.947973)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 100
+text = "MULTIPLAYER"
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=663558689]
+
+[node name="Multiplayer Menu" type="Control" parent="CanvasLayer" unique_id=1503644676]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="PanelContainer" parent="CanvasLayer/Multiplayer Menu" unique_id=475515763]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -166.0
+offset_right = 256.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu" type="MarginContainer" parent="CanvasLayer/Multiplayer Menu/MainMenu" unique_id=7959553]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu" unique_id=698950417]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox" unique_id=898517119]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Host_Join" type="HBoxContainer" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox" unique_id=1749303605]
+layout_mode = 2
+
+[node name="host" type="CheckBox" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox/Host_Join" unique_id=1340212723]
+layout_mode = 2
+text = "Host"
+icon_alignment = 2
+
+[node name="play_button" type="Button" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox/Host_Join" unique_id=1115647603]
+layout_mode = 2
+size_flags_horizontal = 3
+shortcut = SubResource("Shortcut_evees")
+text = "JOIN"
+
+[node name="Conditions" type="HBoxContainer" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox" unique_id=2050552028]
+layout_mode = 2
+
+[node name="condition_label" type="Label" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox/Conditions" unique_id=671112877]
+layout_mode = 2
+text = "Address"
+
+[node name="address" type="LineEdit" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox/Conditions" unique_id=341029317]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "localhost"
+placeholder_text = "Internet Protocol (IP) address"
+alignment = 1
+
+[node name="size" type="LineEdit" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox/Conditions" unique_id=10701075]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+placeholder_text = "server size"
+alignment = 1
+
+[node name="Port" type="HBoxContainer" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox" unique_id=2047588361]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox/Port" unique_id=970318100]
+layout_mode = 2
+text = "Port"
+
+[node name="port" type="LineEdit" parent="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox/Port" unique_id=695858285]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1090"
+placeholder_text = "Internet Protocol (IP) port"
+alignment = 1
+
+[node name="Connecting_menu" type="MarginContainer" parent="CanvasLayer/Multiplayer Menu/MainMenu" unique_id=701093974]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Multiplayer Menu/MainMenu/Connecting_menu" unique_id=1221504561]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="CanvasLayer/Multiplayer Menu/MainMenu/Connecting_menu/VBox" unique_id=980694305]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Connecting..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel" type="HBoxContainer" parent="CanvasLayer/Multiplayer Menu/MainMenu/Connecting_menu/VBox" unique_id=1868799850]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="cancel_button" type="Button" parent="CanvasLayer/Multiplayer Menu/MainMenu/Connecting_menu/VBox/Cancel" unique_id=1390513570]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
+shortcut = SubResource("Shortcut_evees")
+text = "CANCEL?"
+
+[node name="version" type="Label" parent="CanvasLayer/Multiplayer Menu" unique_id=885302436]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -19.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="pressed" from="CanvasLayer/Multiplayer Menu/MainMenu/menu/VBox/Host_Join/play_button" to="." method="play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Multiplayer Menu/MainMenu/Connecting_menu/VBox/Cancel/cancel_button" to="." method="cancel_pressed"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=9 format=3 uid="uid://4m2f3gp3g7i6"]
+
+[ext_resource type="Texture2D" uid="uid://bgwnvfsblkt28" path="res://2D arena/items/pistola/pistola_casing.png" id="1_8tyhh"]
+[ext_resource type="Script" uid="uid://jigxg1g0la7g" path="res://2D arena/items/pistola/casing.gd" id="2_s8u7q"]
+[ext_resource type="AudioStream" uid="uid://bcla0ccpb4dvu" path="res://2D arena/audio/Rifle_casings-01.wav" id="3_6maqp"]
+[ext_resource type="AudioStream" uid="uid://c5j8ockhbfn7i" path="res://2D arena/audio/Rifle_casings-02.wav" id="4_jj0x1"]
+[ext_resource type="AudioStream" uid="uid://c6aot8gbmhob" path="res://2D arena/audio/Rifle_casings-03.wav" id="5_0ourd"]
+[ext_resource type="AudioStream" uid="uid://n3mw5ktju8b4" path="res://2D arena/audio/Rifle_casings-04.wav" id="6_jywit"]
+[ext_resource type="AudioStream" uid="uid://cwcc5pk641jne" path="res://2D arena/audio/Rifle_casings-05.wav" id="7_je2hd"]
+[ext_resource type="AudioStream" uid="uid://dyhgmlgsj64so" path="res://2D arena/audio/Rifle_casings-06.wav" id="8_tthc6"]
+
+[node name="Casing" type="Sprite2D"]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.109375, 0.109375)
+texture = ExtResource("1_8tyhh")
+script = ExtResource("2_s8u7q")
+audios = Array[AudioStreamWAV]([ExtResource("3_6maqp"), ExtResource("4_jj0x1"), ExtResource("5_0ourd"), ExtResource("6_jywit"), ExtResource("7_je2hd"), ExtResource("8_tthc6")])
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

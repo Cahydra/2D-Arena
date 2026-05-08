@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://n3mw5ktju8b4"
+path="res://.godot/imported/Rifle_casings-04.wav-e457ed5d0c956d19dbbeec1402c99d12.sample"
+
+[deps]
+
+source_file="res://2D arena/audio/Rifle_casings-04.wav"
+dest_files=["res://.godot/imported/Rifle_casings-04.wav-e457ed5d0c956d19dbbeec1402c99d12.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

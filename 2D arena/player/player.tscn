@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c5hmtfb2tg1l5"]
+
+[ext_resource type="Script" uid="uid://rvep23ocfo0k" path="res://2D arena/player/player_script.gd" id="1_niapn"]
+[ext_resource type="Texture2D" uid="uid://bo78lm8yrspnb" path="res://2D arena/textures/Frog.png" id="2_fk0tp"]
+[ext_resource type="AudioStream" uid="uid://b5gm2ha5a7xxg" path="res://2D arena/audio/hit noise.wav" id="3_b8jdd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_na01i"]
+radius = 25.02
+
+[node name="player" type="RigidBody2D" unique_id=1749384966]
+gravity_scale = 0.0
+can_sleep = false
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 999
+script = ExtResource("1_niapn")
+
+[node name="Player image" type="TextureRect" parent="." unique_id=949108898]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+texture = ExtResource("2_fk0tp")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=240420334]
+visible = false
+shape = SubResource("CircleShape2D_na01i")
+
+[node name="Hold position" type="Marker2D" parent="." unique_id=319926689]
+position = Vector2(57, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=203123534]
+stream = ExtResource("3_b8jdd")
+volume_db = -10.0
+
+[node name="hinge" type="Node2D" parent="." unique_id=1803419937]
+
+[node name="HealthBar" type="ProgressBar" parent="hinge" unique_id=454667149]
+modulate = Color(0, 1, 0, 1)
+offset_left = -63.0
+offset_top = 29.0
+offset_right = 69.0
+offset_bottom = 56.0
+value = 100.0
+show_percentage = false
+
+[node name="NameLabel" type="Label" parent="hinge" unique_id=1514538343]
+offset_left = -62.0
+offset_top = 31.0
+offset_right = 70.0
+offset_bottom = 54.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 16
+text = "player"
+horizontal_alignment = 1
+vertical_alignment = 1

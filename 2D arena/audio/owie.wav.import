@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://boggfv0dyecni"
+path="res://.godot/imported/owie.wav-2be39d0484c7bb10a0651e845ef89092.sample"
+
+[deps]
+
+source_file="res://2D arena/audio/owie.wav"
+dest_files=["res://.godot/imported/owie.wav-2be39d0484c7bb10a0651e845ef89092.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

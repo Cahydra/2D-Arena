@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b5gm2ha5a7xxg"
+path="res://.godot/imported/hit noise.wav-1593f70ac65345d709b59cb12ce0f90b.sample"
+
+[deps]
+
+source_file="res://2D arena/audio/hit noise.wav"
+dest_files=["res://.godot/imported/hit noise.wav-1593f70ac65345d709b59cb12ce0f90b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0wqx01663uov"]
+
+[ext_resource type="Texture2D" uid="uid://7wgt8qcfc6st" path="res://2D arena/items/pistola/pistola muzzle flash.png" id="1_15aor"]
+[ext_resource type="Script" uid="uid://c36ltbi1i67bd" path="res://2D arena/items/pistola/pistola_logica.gd" id="1_x2s8y"]
+[ext_resource type="Texture2D" uid="uid://ilpqfone78s3" path="res://2D arena/items/pistola/pistola.png" id="2_3aa4w"]
+[ext_resource type="AudioStream" uid="uid://bdeaj5i7oksaw" path="res://2D arena/items/pistola/gun_shot_sound3.wav" id="2_bcg1s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1eyog"]
+
+[node name="pistola" type="RigidBody2D"]
+collision_mask = 2
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_x2s8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1eyog")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.109375, 0.109375)
+texture = ExtResource("2_3aa4w")
+flip_h = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_bcg1s")
+volume_db = -10.0
+
+[node name="Barrel" type="Node2D" parent="."]
+position = Vector2(1, -5)
+
+[node name="muzzle flash" type="Node2D" parent="."]
+visible = false
+
+[node name="PistolaMuzzleFlash" type="Sprite2D" parent="muzzle flash"]
+modulate = Color(1, 0.678, 0.059, 0.941)
+position = Vector2(36, -4)
+scale = Vector2(0.181641, 0.18235)
+texture = ExtResource("1_15aor")
+
+[node name="PointLight2D" type="PointLight2D" parent="muzzle flash/PistolaMuzzleFlash"]
+scale = Vector2(2, 2)
+color = Color(1, 0.678431, 0.0588235, 0.941176)
+texture = ExtResource("1_15aor")

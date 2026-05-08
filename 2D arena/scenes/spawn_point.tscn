@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://becpulsbuuwxm"]
+
+[ext_resource type="Script" uid="uid://f3qh4j6u1x1k" path="res://2D arena/scripts/spawn_point.gd" id="1_42vyp"]
+[ext_resource type="Texture2D" uid="uid://ck0xvb2avsmwy" path="res://2D arena/textures/spawn.png" id="2_ln0ea"]
+
+[node name="spawn point" type="Node2D"]
+position = Vector2(592, 587)
+script = ExtResource("1_42vyp")
+
+[node name="Spawn" type="Sprite2D" parent="."]
+scale = Vector2(0.132813, 0.132813)
+texture = ExtResource("2_ln0ea")

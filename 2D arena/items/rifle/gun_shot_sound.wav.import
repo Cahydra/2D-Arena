@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1hk76egpw78y"
+path="res://.godot/imported/gun_shot_sound.wav-439476dea9d3d003da8e1725e0723c09.sample"
+
+[deps]
+
+source_file="res://2D arena/items/rifle/gun_shot_sound.wav"
+dest_files=["res://.godot/imported/gun_shot_sound.wav-439476dea9d3d003da8e1725e0723c09.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

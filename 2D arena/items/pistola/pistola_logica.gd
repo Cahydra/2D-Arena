@@ -1,0 +1,71 @@
+extends Item2D
+class_name Pistola2D
+
+const PROJECTILE = preload("res://2D arena/items/pistola/projectile.tscn")
+const CASING = preload("res://2D arena/items/pistola/casing.tscn")
+const PISTOLA_CASING_TEXTURE = preload("res://2D arena/items/pistola/pistola_casing.png")
+
+const GUN_SHOT_SOUND_SFX = preload("res://2D arena/items/pistola/gun_shot_sound3.wav")
+const PISTOLA_RELOADA_SFX = preload("res://2D arena/items/pistola/pistola_reloada.wav")
+
+
+@onready var muzzle_flash: Node2D = $"muzzle flash"
+@onready var barrel: Node2D = $Barrel
+@onready var stream: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
+@export var damage: float = 28.0
+
+@export var bullets: int = 17##Current amount in magazine
+@export var capacity: int = 17##Full magazine
+
+@export var reload_time: float = 0.85
+@export var shoot_wait_time: float = 0.15
+
+
+func _ready() -> void:
+	activate.connect(server.echo.bind(shoot))
+	action.connect(server.echo.bind(reload))
+
+
+var cool_down: bool = false
+func shoot():
+	if bullets <= 0: return
+	if cool_down: return
+	
+	cool_down = true
+	bullets -= 1
+	
+	stream.stream = GUN_SHOT_SOUND_SFX
+	stream.play()
+	flash()
+	
+	var new_projectile = PROJECTILE.instantiate()
+	game.main_scene.add_child(new_projectile)
+	new_projectile.fire(barrel.global_position, Vector2.from_angle(global_rotation), damage, 1000.0, [self])
+	
+	var new_casing = CASING.instantiate()
+	game.main_scene.visuals.add_child(new_casing)##Add casing to visuals
+	new_casing.throw_casing(PISTOLA_CASING_TEXTURE, global_position, Vector2(randf_range(-1,1), randf_range(-1,1))* 200.0, randf_range(-1,1)* 20.0, 5.0)
+	
+	await server.wait(shoot_wait_time)
+	cool_down = false
+
+
+func flash():
+	muzzle_flash.visible = true
+	await server.wait(0.07)
+	muzzle_flash.visible = false
+
+
+func reload():
+	if cool_down: return
+	cool_down = true
+	stream.stream = PISTOLA_RELOADA_SFX
+	stream.play()
+	
+	await server.wait(reload_time)##This can desync values so make sure to sync values afterwards.
+	
+	##Sync bullets and cool_down from server side to everyone.
+	if multiplayer.is_server():
+		server.forward({self: {"bullets":capacity,"cool_down":false}})

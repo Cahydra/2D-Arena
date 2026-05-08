@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv7feab8qyi8a"]
+
+[ext_resource type="Script" uid="uid://cpqnhk1jhtftb" path="res://2D arena/items/item/item.gd" id="1_0vwre"]
+[ext_resource type="Texture2D" uid="uid://bslkw2jsd80qo" path="res://2D arena/textures/MissingTexture.png" id="2_rlhbe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1eyog"]
+
+[node name="ITEM" type="RigidBody2D"]
+collision_mask = 2
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_0vwre")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1eyog")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("2_rlhbe")
